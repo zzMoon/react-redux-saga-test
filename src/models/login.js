@@ -12,8 +12,12 @@ export default {
     effects: {
         * login({ payload }, { put, call }) {
             yield put({ type: 'btnLoading', data: true });
-            yield call(apis.login.loginPost, payload);
-            yield put({ type: 'btnLoading', data: false });
+            try {
+                yield call(apis.login.loginPost, payload);
+                yield put({ type: 'btnLoading', data: false });
+            } catch (e) {
+                yield put({ type: 'btnLoading', data: false });
+            }
         },
     },
 

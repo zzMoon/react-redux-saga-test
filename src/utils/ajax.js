@@ -8,7 +8,7 @@ function myFetch(url, request, isNotModal) {
     return fetch(url, request)
         .then(res => res.json())
         .then(json => {
-            const { code, message } = json;
+            const { code, msg } = json;
 
             if (code == 200) {
                 return json;
@@ -17,11 +17,11 @@ function myFetch(url, request, isNotModal) {
                     Modal.error({ title: '请重新登录' });
                     location.hash = '#login';
                 }
-                throw new Error(message);
+                throw new Error(msg);
             } else {
                 // 可以选择不弹框提示错误
-                !isNotModal && Modal.error({ title: message });
-                throw new Error(message);
+                !isNotModal && Modal.error({ title: msg });
+                throw new Error(msg);
             }
         });
 }

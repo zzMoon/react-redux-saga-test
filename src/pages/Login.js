@@ -33,7 +33,7 @@ function Login({
     }
 
     return (
-        <div className="login">
+        <div className="login" onKeyDown={handleKeyDownLogin}>
             <div className="loginBox">
                 <div className="loginTitle">XX帮云平台</div>
                 <div className="loginContent">
