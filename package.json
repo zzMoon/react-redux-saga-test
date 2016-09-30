@@ -65,6 +65,7 @@
     "react-dom": "15.3.2",
     "react-router": "2.8.1",
     "react-router-loader": "^0.5.4",
+    "redux-logger": "^2.6.1",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
