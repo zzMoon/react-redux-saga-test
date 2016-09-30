@@ -8,6 +8,5 @@ import login from './models/login';
 const app = dva();
 
 app.model(login);
-
 app.router(routes);
 app.start('#root');
