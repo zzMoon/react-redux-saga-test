@@ -1,10 +1,22 @@
 # react-redux-saga-test
-## 1.重构目录结构
-## 2.使用stateless组件
-## 3.使用redux-saga处理异步action
-## 4.添加对象展开操作
-### npm install babel-plugin-transform-object-rest-spread
-### "plugins": ["transform-object-rest-spread"]
-## 5.使用antd2.0.0
-### npm install babel-plugin-import
-### "plugins": [["import", [{ "libraryName": "antd", "style": "css" }]]]
+```bash
+npm intsall
+npm run local
+```
+- 使用dva优化项目
+- 重构目录结构
+- 使用stateless组件
+- 使用generator
+```bash
+npm install babel-runtime babel-plugin-transform-runtime
+```
+- 添加对象展开操作
+```bash
+npm install babel-plugin-transform-object-rest-spread
+"plugins": ["transform-object-rest-spread"]
+```
+- 使用antd2.0.0
+```bash
+npm install babel-plugin-import
+"plugins": [["import", [{ "libraryName": "antd", "style": "css" }]]]
+```
