@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
-import { Button, Input } from 'antd';
+import { Button, Input, Modal } from 'antd';
 
 import './login.scss';
 
@@ -8,32 +8,29 @@ function Login({
     dispatch,
     username,
     password,
-    loginBtnLoading,
+    btnLoading,
 }) {
-    // handleLogin() {
-    //     const { actions, userName, passWord } = this.props;
+    function handleLogin() {
+        if (!username) {
+            Modal.error({ title: '账号不能为空' });
+            return;
+        }
 
-    //     if(!userName) {
-    //         Modal.error({ title: '账号不能为空' });
-    //         return;
-    //     }
+        if (!password) {
+            Modal.error({ title: '密码不能为空' });
+            return;
+        }
 
-    //     if(!passWord) {
-    //         Modal.error({ title: '密码不能为空' });
-    //         return;
-    //     }
+        dispatch({ type: 'login/login', payload: { password, username } });
+    }
 
-    //     actions.login();
-    // }
+    function handleKeyDownLogin(e) {
+        const evt = e || window.event; // 获取event对象
 
-    // handleKeyDownLogin(e) {
-    //     var evt = e || window.event; //获取event对象   
-    //     var obj = evt.target || evt.srcElement; //获取事件源 
-
-    //     if (evt.keyCode == 13) {
-    //         this.handleLogin();
-    //     }
-    // }
+        if (evt.keyCode == 13) {
+            handleLogin();
+        }
+    }
 
     return (
         <div className="login">
@@ -62,7 +59,10 @@ function Login({
                         </div>
                     </div>
                     <div className="line">
-                        <Button loading={loginBtnLoading}>登录</Button>
+                        <Button
+                            loading={btnLoading}
+                            onClick={handleLogin}
+                        >登录</Button>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ Login.propTypes = {
     dispatch: PropTypes.func,
     username: PropTypes.string,
     password: PropTypes.string,
-    loginBtnLoading: PropTypes.bool,
+    btnLoading: PropTypes.bool,
 };
 
 function mapStateToProps({ login }) {
