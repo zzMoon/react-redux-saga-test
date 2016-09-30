@@ -1,0 +1,17 @@
+td {
+    & > .ant-form-item {
+		margin-bottom: 0 !important;
+    }
+
+    .has-error.has-feedback {
+    	margin-top: 18px;
+    }
+}
+
+.ant-modal-mask {
+  z-index: 1111;
+}
+
+.ant-modal-wrap {
+  z-index: 1112;
+}

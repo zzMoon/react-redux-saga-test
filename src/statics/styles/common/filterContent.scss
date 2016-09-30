@@ -1,0 +1,29 @@
+.filter {
+	.filter-btns {
+		margin-bottom: 16px; 
+		height: 28px;
+		display: flex;
+		& > button {
+			height: 28px;
+			& + button {
+				margin-left: 10px;
+			}
+			&.active {
+	    		height: 33px;
+			    border-bottom-left-radius: 0;
+			    border-bottom-right-radius: 0;
+			    border-bottom: 1px solid #fff;
+			}
+		}
+		&.filter-active {
+			height: 16px;
+		}
+	}
+	.filter-content {
+		border: 1px solid #ddd;
+		padding: 15px 15px 0 15px;
+		&.active {
+			border-color: #2baee9;
+		}
+	}
+}
