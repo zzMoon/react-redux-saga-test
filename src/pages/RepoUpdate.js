@@ -3,9 +3,9 @@ import { connect } from 'dva';
 
 import RepoInfo from '../components/Repo/RepoInfo';
 
-function RepoCreate({ dispatch, repoInfo }) {
+function RepoUpdate({ dispatch, repoInfo }) {
     function onSubmit(values) {
-        dispatch({ type: 'repoInfo/create', payload: values });
+        dispatch({ type: 'repoInfo/update', payload: values });
     }
 
     return (
@@ -18,7 +18,7 @@ function RepoCreate({ dispatch, repoInfo }) {
     );
 }
 
-RepoCreate.propTypes = {
+RepoUpdate.propTypes = {
     dispatch: PropTypes.func,
     repoInfo: PropTypes.object,
 };
@@ -27,4 +27,4 @@ function mapStateToProps({ repoInfo }) {
     return { repoInfo };
 }
 
-export default connect(mapStateToProps)(RepoCreate);
+export default connect(mapStateToProps)(RepoUpdate);

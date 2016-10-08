@@ -12,15 +12,6 @@ export default {
         btnLoading: false,
     },
 
-    subscriptions: {
-        setup({ dispatch, history }) {
-            history.listen(location => {
-                if (location.pathname == '/repo') {
-                }
-            });
-        }
-    },
-
     effects: {
         * create({ payload }, { put, call }) {
             yield put({ type: 'btnLoading', btnLoading: true });
@@ -36,8 +27,8 @@ export default {
         btnLoading(state, { btnLoading }) {
             return { ...state, btnLoading };
         },
-        createSuccess(state, { payload }) {
-            return { ...state, ...payload, btnLoading: false };
-        },
+        getData(state, { payload }) {
+            return payload;
+        }
     },
 };

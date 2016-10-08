@@ -4,8 +4,13 @@ import { Table, Button } from 'antd';
 
 import { ps } from '../configs/configureBase';
 
-function Repos({ repos }) {
+function Repos({ dispatch, repos }) {
     const { list, tableLoading, total, pn } = repos;
+
+    function handleToUpdate(record) {
+        dispatch({ type: 'repoInfo/getData', payload: record });
+        location.hash = `#repo/update?repoUuid=${record.uuid}`;
+    }
 
     const columns = [{
         title: '仓库名称',
@@ -33,7 +38,7 @@ function Repos({ repos }) {
         width: '10%',
         render: (text, record) =>
             <div>
-                <a>修改</a>
+                <a onClick={() => handleToUpdate(record)}>修改</a>
                 <span className="ant-divider"></span>
                 <a>删除</a>
             </div>
