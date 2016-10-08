@@ -1,0 +1,23 @@
+@import "../statics/styles/common/variables.scss";
+
+.main {
+    height: 100%;
+    .container {
+        margin-left: $menu-g-w;
+        height: 100%;
+        .content {
+            overflow-y: auto;
+            background: $bg-color;
+            height: 100%;
+            padding: $header-h 30px 0;
+            box-sizing: border-box;
+            .breadcrumb {
+                height: 50px;
+                line-height: 50px;
+                span {
+                    color: #222;
+                }
+            }
+        }
+    }
+}

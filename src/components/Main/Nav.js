@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Menu, Icon } from 'antd';
 import { Link } from 'react-router';
 
-import './nav.scss';
+import './Nav.scss';
 
 function Nav({ path }) {
     return (

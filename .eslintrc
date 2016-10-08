@@ -15,6 +15,7 @@
     "no-confusing-arrow": 0, // 关闭箭头函数不能直接用三元表达式的限制
     "linebreak-style": 0, // 关闭必须使用LF的限制，vsc默认CRLF
     "react/jsx-filename-extension": 0, // 关闭js后缀的文件不能有jsx的限制
+    "react/forbid-prop-types": 0, // 关闭PropTypes不能使用any,object,array的限制
     "import/no-extraneous-dependencies": 0,
     "no-param-reassign": 0,
 

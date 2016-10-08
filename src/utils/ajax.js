@@ -12,7 +12,7 @@ function myFetch(url, request, isNotModal) {
 
             if (code == 200) {
                 return json;
-            } else if (code == '401') {
+            } else if (code == '901') {
                 if (location.href.indexOf('login') === -1) {
                     Modal.error({ title: '请重新登录' });
                     location.hash = '#login';
@@ -27,9 +27,9 @@ function myFetch(url, request, isNotModal) {
 }
 
 function createRequest(param, method) {
-    const token = getCookieValue('cdToken') || '';
-    const userName = getCookieValue('cdUserName') || '';
-    const name = encodeURI(getCookieValue('cdName') || '');
+    const token = getCookieValue('paasToken') || '';
+    const userName = getCookieValue('paasUserName') || '';
+    const name = encodeURI(getCookieValue('paasName') || '');
     let body;
     let headers;
 
@@ -50,9 +50,9 @@ function createRequest(param, method) {
 
 export default function createAjax(server, isNotModal) {
     function Get(uri) {
-        const token = getCookieValue('cdToken') || '';
-        const userName = getCookieValue('cdUserName') || '';
-        const name = encodeURI(getCookieValue('cdName') || '');
+        const token = getCookieValue('paasToken') || '';
+        const userName = getCookieValue('paasUserName') || '';
+        const name = encodeURI(getCookieValue('paasName') || '');
         const request = {
             method: 'get',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded', Authentication: JSON.stringify({ token, userName, name }) }

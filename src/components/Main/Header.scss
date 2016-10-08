@@ -1,0 +1,16 @@
+@import "../../statics/styles/common/variables.scss";
+
+.header {
+	position: fixed;
+	top: 0;
+	left: $menu-g-w;
+	right: 0;
+	height: $header-h;
+	line-height: $header-h;
+	background: $header-bg-color;
+	box-shadow: 0px 3px 6px rgb(204, 204, 204);
+	z-index: 1100;
+	.list {
+		margin-right: 40px
+	}
+}

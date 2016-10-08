@@ -12,7 +12,7 @@ export default function ({ history }) {
             <Route path="/" component={Login} />
             <Route path="login" component={Login} />
             <Route component={Main}>
-                <Route path="release" component={Releases} />
+                <Route path="release" breadcrumbName="应用发布" component={Releases} />
             </Route>
         </Router>
     );
