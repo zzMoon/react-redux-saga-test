@@ -21,7 +21,7 @@ export default {
             setCookie('paasName', name, 30);
             setCookie('paasRole', role, 30);
 
-            location.hash = '#release';
+            location.hash = '#repo';
         },
     },
 

@@ -13,8 +13,8 @@ function Nav({ path }) {
                     selectedKeys={[path]}
                     mode="inline"
                 >
-                    <Menu.Item key="release">
-                        <Link to="release"><Icon type="appstore-o" />应用发布</Link>
+                    <Menu.Item key="repo">
+                        <Link to="repo"><Icon type="appstore-o" />仓库管理</Link>
                     </Menu.Item>
                 </Menu>
             </div>

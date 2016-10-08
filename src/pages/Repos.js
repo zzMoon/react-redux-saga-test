@@ -64,10 +64,7 @@ function Repos({ repos }) {
 }
 
 Repos.propTypes = {
-    children: PropTypes.element,
-    actions: PropTypes.object,
-    list: PropTypes.array,
-    releaseLoading: PropTypes.bool
+    repos: PropTypes.object,
 };
 
 function mapStateToProps({ repos }) {

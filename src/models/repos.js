@@ -11,7 +11,7 @@ export default {
     subscriptions: {
         setup({ dispatch, history }) {
             history.listen(location => {
-                if (location.pathname == '/release') {
+                if (location.pathname == '/repo') {
                     dispatch({ type: 'query' });
                 }
             });
