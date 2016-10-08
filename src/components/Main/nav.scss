@@ -1,0 +1,36 @@
+@import "../../statics/styles/common/variables.scss";
+
+$logo-font: 24px;
+$item-font: 14px;
+
+$font-color: #ddd;
+$hover-color: #273541;
+$item-list-bg-color: #2c3945;
+
+.menu {
+	position: absolute;
+	top: 0; 
+	left: 0;
+	bottom: 0;
+	width: $menu-g-w;
+	background: $menu-bg-color;
+	overflow: hidden;
+	.logo {
+		height: $header-h;
+		font-size: $logo-font;
+		color: $font-color;
+	}
+	.content {
+		.one {
+			padding-left: 50px;
+			font-size: $item-font;
+			color: $font-color;
+			height: $header-h;
+			line-height: $header-h;
+			cursor: pointer;
+		}
+		.mb-line {
+			border-bottom: 6px solid $hover-color;
+		}
+	}
+}
