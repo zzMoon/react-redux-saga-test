@@ -1,9 +1,9 @@
 import React from 'react';
 import { Router, Route } from 'dva/router';
 
-import Login from 'react-router!./pages/Login';
-import Main from 'react-router!./pages/Main';
-import Releases from 'react-router!./pages/Releases';
+import Login from 'react-router!./routes/Login';
+import Main from 'react-router!./routes/Main';
+import Repos from 'react-router!./routes/Repos';
 
 /* eslint react/prop-types:0 */
 export default function ({ history }) {
@@ -12,7 +12,7 @@ export default function ({ history }) {
             <Route path="/" component={Login} />
             <Route path="login" component={Login} />
             <Route component={Main}>
-                <Route path="release" breadcrumbName="应用发布" component={Releases} />
+                <Route path="release" breadcrumbName="仓库管理" component={Repos} />
             </Route>
         </Router>
     );

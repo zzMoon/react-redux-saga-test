@@ -6,7 +6,7 @@ import './statics/styles/app.scss';
 import routes from './routes';
 import login from './models/login';
 import main from './models/main';
-import releases from './models/releases';
+import repos from './models/repos';
 
 const app = dva();
 
@@ -16,7 +16,7 @@ app.use({
 
 app.model(login);
 app.model(main);
-app.model(releases);
+app.model(repos);
 
 app.router(routes);
 app.start('#root');
