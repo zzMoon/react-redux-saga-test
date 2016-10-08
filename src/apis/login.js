@@ -4,5 +4,5 @@ import createAjax from '../utils/ajax';
 const { Post } = createAjax(getServer().cloudMaster);
 
 export function loginPost(param) {
-    return Post('login.do', param);
+    return Post('api/user/login/common', param);
 }

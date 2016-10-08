@@ -27,16 +27,18 @@ function myFetch(url, request, isNotModal) {
 }
 
 function createRequest(param, method) {
-    const sessionId = getCookieValue('gSessionId') || '';
+    const token = getCookieValue('cdToken') || '';
+    const userName = getCookieValue('cdUserName') || '';
+    const name = encodeURI(getCookieValue('cdName') || '');
     let body;
     let headers;
 
     if (typeof param == 'string') {      // json字符串
         body = param;
-        headers = { 'Content-Type': 'application/json', Authentication: sessionId };
+        headers = { 'Content-Type': 'application/json', Authentication: JSON.stringify({ token, userName, name }) };
     } else {                             // Form
         body = obj2url(param);
-        headers = { 'Content-Type': 'application/x-www-form-urlencoded', Authentication: sessionId };
+        headers = { 'Content-Type': 'application/x-www-form-urlencoded', Authentication: JSON.stringify({ token, userName, name }) };
     }
 
     return {
@@ -48,10 +50,12 @@ function createRequest(param, method) {
 
 export default function createAjax(server, isNotModal) {
     function Get(uri) {
-        const sessionId = getCookieValue('gSessionId') || '';
+        const token = getCookieValue('cdToken') || '';
+        const userName = getCookieValue('cdUserName') || '';
+        const name = encodeURI(getCookieValue('cdName') || '');
         const request = {
             method: 'get',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded', Authentication: sessionId }
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded', Authentication: JSON.stringify({ token, userName, name }) }
         };
 
         return myFetch(`${server}/${uri}`, request, isNotModal);

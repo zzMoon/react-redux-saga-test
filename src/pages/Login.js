@@ -21,7 +21,7 @@ function Login({
             return;
         }
 
-        dispatch({ type: 'login/login', payload: { password, username } });
+        dispatch({ type: 'login/login', payload: { passWord: password, userName: username } });
     }
 
     function handleKeyDownLogin(e) {

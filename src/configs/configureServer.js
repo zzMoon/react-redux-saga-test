@@ -1,6 +1,6 @@
 const server = {
     dev: {
-        cloudMaster: 'http://cc.qa-ag.56qq.com',
+        cloudMaster: 'http://cloudmaster.dev-ag.56qq.com/',
     },
     qa: {},
     devTest: {},
@@ -11,7 +11,7 @@ const port = window.location.port;
 export const host = window.location.host;
 
 export default function getServer() {
-    if (port == '8008') {                     // 开发环境
+    if (port == '8011') {                     // 开发环境
         return server.dev;
     } else if (host == 'dev.cloud.56qq.cn') { // 开发测试环境
         return server.devTest;
