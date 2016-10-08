@@ -5,7 +5,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import path from 'path';
 import devWebpackConfig from '../webpack/dev.config';
 
-const port = 8008;
+const port = 8011;
 const app = express();
 const compiler = webpack(devWebpackConfig);
 
