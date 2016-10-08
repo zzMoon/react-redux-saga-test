@@ -12,7 +12,7 @@ export default function ({ history }) {
             <Route component={pages.Main}>
                 <Route path="repo" breadcrumbName="仓库管理">
                     <IndexRoute breadcrumbName="列表" component={pages.Repos} />
-                    <Route breadcrumbName="新建" component={pages.RepoCreate} />
+                    <Route path="create" breadcrumbName="新建" component={pages.RepoCreate} />
                 </Route>
             </Route>
         </Router>

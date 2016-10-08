@@ -21,7 +21,7 @@ export default {
     effects: {
         * query({ payload }, { put, call }) {
             yield put({ type: 'tableLoading', tableLoading: true });
-            const { data } = yield call(apis.release.releaseListGet);
+            const { data } = yield call(apis.repo.repoListGet);
             if (data) {
                 yield put({
                     type: 'querySuccess',

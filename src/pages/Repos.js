@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'dva';
-import { Table, Form, Button, Select, Input, Modal, Menu, Dropdown, Icon, Row, Col } from 'antd';
+import { Table, Button } from 'antd';
 
 import { ps } from '../configs/configureBase';
 
@@ -50,6 +50,7 @@ function Repos({ repos }) {
         <div className="cloud-wrap">
             <Button
                 type="primary"
+                onClick={() => location.hash = '#repo/create'}
             >新建</Button>
             <Table
                 style={{ marginTop: '16px' }}

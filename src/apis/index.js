@@ -1,7 +1,7 @@
 import * as login from './login';
-import * as release from './release';
+import * as repo from './repo';
 
 export default {
     login,
-    release,
+    repo,
 };
