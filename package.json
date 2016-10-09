@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "entry": {
+    "index": "./src/index.js"
+  },
   "scripts": {
     "local": "set NODE_ENV=local&&babel-node ./server/dev.server.js",
-    "server": "set NODE_ENV=production&&babel-node ./server/prod.server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "set NODE_ENV=dev&&webpack --verbose --colors --display-error-details --config ./webpack/prod.config.js",
+    "qa": "set NODE_ENV=qa&&webpack --verbose --colors --display-error-details --config ./webpack/prod.config.js",
+    "devTest": "set NODE_ENV=devTest&&webpack --verbose --colors --display-error-details -p --config ./webpack/prod.config.js",
+    "prod": "set NODE_ENV=prod&&webpack --verbose --colors --display-error-details -p --config ./webpack/prod.config.js",
+    "server": "set NODE_ENV=prod&&babel-node ./server/prod.server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "atool-build"
   },
   "babel": {
     "presets": [
@@ -51,6 +59,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-runtime": "^6.11.6",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.12",
     "css-loader": "^0.25.0",
     "dva": "1.0.0",
     "eslint": "^3.6.1",
@@ -75,5 +84,8 @@
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2",
     "whatwg-fetch": "^1.0.0"
+  },
+  "dependencies": {
+    "atool-build": "^0.8.1"
   }
 }
