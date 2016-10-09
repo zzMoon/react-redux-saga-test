@@ -11,7 +11,7 @@ const formItemLayout = {
 };
 
 function RepoInfo(props) {
-    const { version, name, domain, account, password, btnLoading } = props.repoInfo;
+    const { uuid, version, name, domain, account, password, btnLoading, pageType } = props.repoInfo;
     const { getFieldDecorator } = props.form;
 
     function handleSubmit() {
@@ -23,7 +23,7 @@ function RepoInfo(props) {
                 return;
             }
 
-            onSubmit({ ...values, version });
+            onSubmit({ ...values, uuid, version });
         });
     }
 
@@ -116,7 +116,7 @@ function RepoInfo(props) {
                         onClick={handleSubmit}
                         type="primary"
                         loading={btnLoading}
-                    >创建</Button>
+                    >{pageType == 'create' ? '创建' : '修改'}</Button>
                 </Col>
             </Row>
         </Form>

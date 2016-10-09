@@ -1,15 +1,27 @@
 import apis from '../apis';
 
+const initialState = {
+    version: 'v2',
+    name: null,
+    domain: null,
+    account: null,
+    password: null,
+    btnLoading: false,
+};
+
 export default {
     namespace: 'repoInfo',
 
-    state: {
-        version: 'v2',
-        name: null,
-        domain: null,
-        account: null,
-        password: null,
-        btnLoading: false,
+    state: initialState,
+
+    subscriptions: {
+        setup({ dispatch, history }) {
+            history.listen(location => {
+                if (location.pathname == '/repo/create') {
+                    dispatch({ type: 'clear' });
+                }
+            });
+        },
     },
 
     effects: {
@@ -29,6 +41,9 @@ export default {
         },
         getData(state, { payload }) {
             return payload;
+        },
+        clear(state) {
+            return { ...state, ...initialState };
         }
     },
 };

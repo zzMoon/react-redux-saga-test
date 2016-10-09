@@ -13,6 +13,7 @@ function RepoCreate({ dispatch, repoInfo }) {
             <RepoInfo
                 onSubmit={onSubmit}
                 repoInfo={repoInfo}
+                pageType="create"
             />
         </div>
     );

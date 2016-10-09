@@ -13,6 +13,7 @@ function RepoUpdate({ dispatch, repoInfo }) {
             <RepoInfo
                 onSubmit={onSubmit}
                 repoInfo={repoInfo}
+                pageType="update"
             />
         </div>
     );
