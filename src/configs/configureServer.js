@@ -19,5 +19,5 @@ export default function getServer() {
         return server.prod;
     }
 
-    return { galileo: '' };   // 其他环境
+    return { cloudMaster: 'http://cloudmaster.dev-ag.56qq.com/' };   // 其他环境
 }

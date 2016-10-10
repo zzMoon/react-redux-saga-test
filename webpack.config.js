@@ -34,21 +34,24 @@ switch (NODE_ENV) {
         break;
 }
 
-module.exports = function (webpackConfig, env) {
+module.exports = function (webpackConfig) {
+    webpackConfig.entry.common = ['react', 'react-dom'];
     webpackConfig.output.path = path.join(__dirname, 'dist', 'dev');
     webpackConfig.output.filename = 'bundle.js';
-    webpackConfig.output.publicPath = publicPath;
+    // webpackConfig.output.publicPath = publicPath;
 
     webpackConfig.module.loaders.push(
         { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') }
     );
 
     webpackConfig.plugins.push(
+        new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'common', /* filename= */'common.js'), // 捆绑第三方库文件
         new CleanWebpackPlugin(cleanDir, {
             root: cleanRootPath,
             verbose: true,
             dry: false,
-        })
+        }),
+        new ExtractTextPlugin('[name].css', { disable: false, allChunks: true })
     );
 
     return webpackConfig;
