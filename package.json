@@ -4,17 +4,16 @@
   "description": "",
   "main": "index.js",
   "entry": {
-    "index": "./src/index.js"
+    "main": "./src/index.js"
   },
   "scripts": {
     "local": "set NODE_ENV=local&&babel-node ./server/dev.server.js",
-    "dev": "set NODE_ENV=dev&&webpack --verbose --colors --display-error-details --config ./webpack/prod.config.js",
     "qa": "set NODE_ENV=qa&&webpack --verbose --colors --display-error-details --config ./webpack/prod.config.js",
     "devTest": "set NODE_ENV=devTest&&webpack --verbose --colors --display-error-details -p --config ./webpack/prod.config.js",
     "prod": "set NODE_ENV=prod&&webpack --verbose --colors --display-error-details -p --config ./webpack/prod.config.js",
     "server": "set NODE_ENV=prod&&babel-node ./server/prod.server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "atool-build"
+    "dev": "set NODE_ENV=dev&&atool-build --no-compress hash"
   },
   "babel": {
     "presets": [
